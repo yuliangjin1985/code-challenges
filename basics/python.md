@@ -1,5 +1,7 @@
-## Basic usages
-### sorting
+# Basic usages
+
+## 435 Non-overlapping intervals
+
 ```python
     #less is more
     def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
@@ -90,4 +92,15 @@ class Codec:
 # ser = Codec()
 # deser = Codec()
 # ans = deser.deserialize(ser.serialize(root)
+```
+
+## 235 Lowest common ancestor of a binary search tree
+
+Given a binary search tree (BST), find the lowest common ancestor (LCA) node of two given nodes in the BST.
+
+```python
+def lowestCommonAncestor(self, root, p, q):
+    while (root.val - p.val) * (root.val - q.val) > 0:
+        root = (root.left, root.right)[p.val > root.val] # works like `? :` in java
+    return root
 ```
