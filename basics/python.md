@@ -154,3 +154,25 @@ class Trie:
 # param_2 = obj.search(word)
 # param_3 = obj.startsWith(prefix
 ```
+
+### 845 Longest mountain in an array
+
+```python
+class Solution(object):
+    def longestMountain(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: int
+        """
+        n = len(arr)
+        up, down = [0] * n, [0] * n
+        for i in range(1, n):
+            if arr[i] > arr[i-1]: up[i] = up[i-1] + 1
+        for i in range(n-1)[::-1]:
+            if arr[i] > arr[i+1]: down[i] = down[i+1] + 1
+        ret = 0
+        for i in range(1, n - 1):
+            if up[i] > 0 and down[i] > 0:
+                ret = max(ret, up[i] + down[i] + 1)
+        return ret
+```
