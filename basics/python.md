@@ -176,3 +176,21 @@ class Solution(object):
                 ret = max(ret, up[i] + down[i] + 1)
         return ret
 ```
+
+### 152 Max Product Subarray
+
+Given an integer array `nums`, find a subarray that has the largest product, and return the product.
+
+The test cases are generated so that the answer will fit in a 32-bit integer.
+
+>Because if there is such a sub array, it has to be starting with one item (prefix product, A in the below code) or ending with one item (suffix product, B in the below code), so we enumerate for all these possibilities. If current item is 0, the subarray starts, ends with, or contains this item will have product as 0. For next item, it contributes 1 instead of 0. That's why `A[i] *= A[i-1] or 1` is so elegantly coded.
+
+```python
+class Solution:
+    def maxProduct(self, A: List[int]) -> int:
+        B = A[::-1]
+        for i in range(1, len(A)):
+            A[i] *= A[i-1] or 1 #Inplace updating the initial list with pre product value
+            B[i] *= B[i-1] or 1
+        return max(max(A), max(B))
+```
