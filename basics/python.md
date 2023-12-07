@@ -194,3 +194,15 @@ class Solution:
             B[i] *= B[i-1] or 1
         return max(max(A), max(B))
 ```
+
+### 628 Maximum product of three numbers
+
+Given an integer array nums, find three numbers whose product is maximum and return the maximum product.
+
+```python
+class Solution:
+    def maximumProduct(self, nums: List[int]) -> int:
+        a = heapq.nsmallest(3, nums) # Time complexity: n * O(ln3)
+        b = heapq.nlargest(3, nums)
+        return max(a[0]*a[1]*b[0], b[0]*b[1]*b[2])
+```
