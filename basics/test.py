@@ -24,3 +24,7 @@ for tuple in dict.items():
 
 for tuple in enumerate(dict.keys()):
     print(tuple)
+
+print(type([1, 2, 3]))
+
+print(list(range(1, 10)))
