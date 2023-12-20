@@ -28,3 +28,14 @@ for tuple in enumerate(dict.keys()):
 print(type([1, 2, 3]))
 
 print(list(range(1, 10)))
+
+list_of_lists = [[2, 3], [1, 5], [1, 2]]
+
+list_of_lists.sort(key=lambda x: x[1])
+
+print(list_of_lists)
+
+list_of_lists.sort(key=lambda x: (x[0], -x[1]))
+print(list_of_lists)
+
+
