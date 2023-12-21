@@ -38,4 +38,11 @@ print(list_of_lists)
 list_of_lists.sort(key=lambda x: (x[0], -x[1]))
 print(list_of_lists)
 
+hex_int = 0x23BD
+hex_str = "0x23BD"
+print(str(hex_int))
+print(hex_str)
+for digit in str(hex_int):
+    print(digit)
+
 

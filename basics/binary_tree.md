@@ -39,7 +39,7 @@ class Solution:
 
 For postorder traversal, each valid node has to be pushed to and polled twice to the stack, the first time was with flag `visited` as `False`, the seond is with this flas as `True` when both of its children were pushed to the stack.
 
-The inorder traversal is basically with order `left -> right -> parent`, but the order being pushed should be the opposite: `parent -> right -> left`, so the left will be popped first.
+The postorder traversal is basically with order `left -> right -> parent`, but the order being pushed should be the opposite: `parent -> right -> left`, so the left will be popped first.
 
 ```python
 class Solution:
