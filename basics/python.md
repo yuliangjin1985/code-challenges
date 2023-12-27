@@ -206,3 +206,29 @@ class Solution:
         b = heapq.nlargest(3, nums)
         return max(a[0]*a[1]*b[0], b[0]*b[1]*b[2])
 ```
+
+### 32 Longest valid parentheses
+
+Given a string containing just the characters '(' and ')', return the length of the longest valid (well-formed) parentheses *substring*.
+
+**Solution**:
+> Use a stack to store the index of the '(' or ')', and when there is a pair of valid parenthese, pop the top element, eventually only invalid indexes are in the stack. And substring between two invalid indexes is a valid parenthese substring. Put index `-1` and `n` as the boundaries.
+
+```python
+class Solution:
+    def longestValidParentheses(self, s: str) -> int:
+        stack = []
+        stack.append(-1) # Add lower boundary
+        for i in range(len(s)):
+            if s[i] == ')' and stack[-1] != -1 and s[stack[-1]] == '(':
+                stack.pop()
+            else:
+                stack.append(i)
+        
+        stack.append(len(s)) # Add upper boundary
+        ret = 0
+        for i in range(1,len(stack)):
+            ret = max(ret, stack[i] - stack[i-1] - 1)
+
+        return ret
+```

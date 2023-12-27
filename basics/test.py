@@ -46,3 +46,24 @@ for digit in str(hex_int):
     print(digit)
 
 
+def longestValidParentheses(s: str) -> int:
+    stack = []
+    stack.append(-1)
+    for i in range(len(s)):
+        if s[i] == ')' and stack and stack[-1] != -1 and s[stack[-1]] == '(':
+            stack.pop()
+        else:
+            stack.append(i)
+    
+    stack.append(len(s))
+    ret = 0
+    for i in range(1,len(stack)):
+        ret = max(ret, stack[i] - stack[i-1] - 1)
+
+    return ret
+
+print(longestValidParentheses(")()(((())))("))
+            
+
+
+
