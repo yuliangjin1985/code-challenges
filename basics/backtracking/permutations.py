@@ -62,6 +62,49 @@ class Solution:
                 if coin <= i:
                     cnt[i] += cnt[i-coin]
         return cnt[n]
+    
+    # 139 Word Break, using recursion, time complexity is O(2^n)
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        flag = False
+        def helper(s, idx):
+            nonlocal flag
+            if idx == len(s):
+                flag = True
+                return
+            else:
+                for word in wordDict:
+                    if s[idx:].startswith(word):
+                        helper(s, idx+len(word))
+        helper(s, 0)
+        return flag
+    
+    # 139 Word Break, using DP, time complexity is O(n^2) (O(N*M) < O(N^2) < O(N*M^2)))
+    # `s[i-m:i] == word` is the correct way to check if the substring ends with the word, equivalent to `s[:i].endswith(word)`
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        dp = [False for _ in range(len(s)+1)]
+        dp[0] = True
+        for i in range(1, len(s)+1):
+            for word in wordDict:
+                m = len(word)
+                if i >= m and s[i-m:i] == word and dp[i-m]:
+                    dp[i] = True
+                    break
+        return dp[len(s)]
+
+    # 140 Word Break II, using DP and backtracking
+    def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
+        out = []
+        def helper(s, i, wordDict, temp):
+            if i == len(s):
+                out.append(f'{temp}'.strip())
+                return
+            else:
+                cur = s[i:]
+                for word in wordDict:
+                    if cur.startswith(word):
+                        helper(s, i+len(word), wordDict, f'{temp} {word}')
+        helper(s, 0, wordDict, "")
+        return out 
         
     
   
