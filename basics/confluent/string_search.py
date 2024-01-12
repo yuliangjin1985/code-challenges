@@ -4,7 +4,8 @@ from collections import defaultdict
 documents = {
     1: "Cloud computing is the on-demand availability of computer system resources.",
     2: "One integrated service for metrics uptime cloud monitoring dashboards and alerts reduces time spent navigating between systems.",
-    3: "Monitor entire cloud infrastructure, whether in the cloud computing is or in virtualized data centers."
+    3: "Monitor entire cloud infrastructure, whether in the cloud computing is or in virtualized data centers.",
+    4: "cloud monitoring"
 }
 
 # Building the inverted index
@@ -24,6 +25,11 @@ def search(query):
     return list(result)
 
 # Example searches
-print(search("cloud"))  # Output: [1, 2, 3]
+# print(search("cloud"))  # Output: [1, 2, 3]
 print(search("cloud monitoring"))  # Output: [2]
 print(search("Cloud computing is"))  # Output: [1, 3]
+
+document = 'Monitor entire cloud infrastructure, whether in the cloud computing is or in virtualized data centers.'
+
+for w in document.lower().split():
+    print(w.strip(',.'))

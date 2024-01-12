@@ -1,0 +1,162 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "cmd+1",
+    "command": "md-shortcut.toggleTitleH1"
+  },
+  {
+    "key": "cmd+2",
+    "command": "md-shortcut.toggleTitleH2"
+  },
+  {
+    "key": "cmd+3",
+    "command": "md-shortcut.toggleTitleH3"
+  },
+  {
+    "key": "cmd+4",
+    "command": "md-shortcut.toggleTitleH4"
+  },
+  {
+    "key": "cmd+5",
+    "command": "md-shortcut.toggleTitleH5"
+  },
+  {
+    "key": "cmd+6",
+    "command": "md-shortcut.toggleTitleH6"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "md-shortcut.toggleInlineCode"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "md-shortcut.toggleCodeBlock"
+  },
+  {
+    "key": "cmd+u",
+    "command": "markdown.extension.editing.toggleUnorderedList",
+    "when": "editorTextFocus && editorLangId == markdown"
+  },
+  {
+    "key": "cmd+e",
+    "command": "-actions.findWithSelection"
+  },
+  {
+    "key": "cmd+e",
+    "command": "-editor.action.toggleScreenReaderAccessibilityMode",
+    "when": "accessibilityHelpIsShown"
+  },
+  {
+    "key": "cmd+p",
+    "command": "-workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+t",
+    "command": "-workbench.action.showAllSymbols"
+  },
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "cmd+shift+j",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+shift+k",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "cmd+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "cmd+shift+s"
+  },
+  {
+    "command": "workbench.files.action.focusFilesExplorer",
+    "key": "ctrl+e",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "n",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "command": "renameFile",
+    "key": "r",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+n",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "command": "deleteFile",
+    "key": "d",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  // EXTRA
+  {
+    "key": "ctrl+shift+5",
+    "command": "editor.emmet.action.matchTag"
+  },
+  {
+    "key": "ctrl+z",
+    "command": "workbench.action.toggleZenMode"
+  },
+  {
+    "key": "cmd+shift+d",
+    "command": "editor.action.goToTypeDefinition"
+  },
+  // Code navigation
+  {
+    "key": "shift+space",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+space",
+    "command": "workbench.action.navigateForward"
+  },
+  {
+    "key": "cmd+shift+w",
+    "command": "editor.action.smartSelect.expand"
+  },
+  {
+      "key": "space+w",
+      "command": "editor.action.smartSelect.shrink"
+  },
+  {
+    "key": "shift+k",
+    "command": "workbench.action.keybindingsReference"
+  },
+  {
+    "key": "cmd+k cmd+r",
+    "command": "-workbench.action.keybindingsReference"
+  }
+]
