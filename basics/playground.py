@@ -113,3 +113,33 @@ print(len(str(bin(2147483650))))
 print(str(bin(2147483650)))
 print(2147483650 - 0x7FFFFFFF)
 
+def search(A, t):
+    l,r = 0,len(A)-1
+    p = A[0]
+    while l<r:
+        mid = l + (r-l)//2
+        m = A[mid]
+        # m, t are on the same side of p or not
+        if (m < p and t < p):
+            m = A[mid]
+        else:
+            m = float('inf') if t >= p else float('-inf')
+        if m < t:
+            l = mid + 1
+        else:
+            r = mid
+    
+    print(r)
+    
+    return r if A[r] == t else -1
+
+
+print(float('inf'))
+print(0x7FFFFFFF)
+print(float('inf')>0x7FFFFFFF)
+print(0x7FFFFFFE + 1)
+print(0x7FFFFFFE + 2)
+print(0x80000000)
+print(0x80000000 ^ 0xffffffff)
+
+print(search([12, 13, 14, 15, 16, 17, 18, 19, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],0))
