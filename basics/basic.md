@@ -105,3 +105,8 @@ Keep records of virtual head, first tail, sub head, sub tail, second head.
 ## 1905 Count Sub Islands
 
 First step, for every island in B which is not in A, change all the connected islands to 0. Then all the 1s in B will also be 1s in A, and count how many islands are there after the first step, using DFS.
+
+## Calculations
+
+|--|--|
+|The integer division should truncate toward zero.|`return a//b+1 if a//b<0 and a%b !=0 else a//b`|

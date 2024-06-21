@@ -60,3 +60,8 @@ class Solution:
         return list
 
 ```
+
+## Main types
+
+For tree issues, dfs can solve a lot of problems. We can pass the tempary result to the recursion as a parameber, like  or we don't pass data to recursion, but use the temp result from recursion like [333 Largest BST Subtree](https://leetcode.com/problems/largest-bst-subtree/description/), or we can store the temp results as a nonlocal variable, like [437 Path Sum III](https://leetcode.com/problems/path-sum-iii/description/). 
+
