@@ -16,15 +16,16 @@ not (c > b or a > d)
 
 Merge Intervals
 Insert Interfal
-Meeting rooms
+Meeting rooms, Meeting rooms II, Meeting rooms III
 Interval List Intersections
 
 ## 56 Merge Intervals
 
 Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
 
->To start from the left, it's better to sort by `start` of intervals, this way always the left most was added to the final list, and there will be other intervals potentially be merged to the previous one only. If sorting based on the `end` of the intervals first, there could be later intervals merged with multiple previous final outputs.
-This is different than 435 Non-overlaping Intervals, which is not merging but finding out how many non-overlaping ones, so can use `less is more` theory to solve the issue by sorting based on the `end` of the intervals.
+>To start from the left, it's better to sort by `start` of intervals, this way always the left most was added to the final list, and there will be other intervals potentially be merged to the previous one only. If sorting based on the `end` of the intervals first, there could be later intervals merged with multiple previous final outputs. Meeting rooms II should also sort by `start` because should always satisfy the requirements by starting time.
+
+This is different than [435 Non-overlaping Intervals](https://leetcode.com/problems/non-overlapping-intervals/description/), which is not merging but finding out how many non-overlaping ones, so can use `less is more` theory to solve the issue by sorting based on the `end` of the intervals (and on `start` decreasing when `end` is equal). Also for [452 Minimum Number of Arrows To Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/), we also can use `later is better` to burst more balloons.
 
 ```python
 class Solution:
@@ -62,7 +63,7 @@ class Solution:
             else:
                 l = min(i[0], l)
                 r = max(i[1], r)
-        return left + [[l,r]] + righ
+        return left + [[l,r]] + right
 ```
 
 ## Interval List Intersections
@@ -95,3 +96,9 @@ class Solution:
 
         return out
 ```
+
+## Meeting rooms
+
+There is LC 252 to check if a person can attend all the meetings. LC 253 is to check how many meeting rooms are needed to satisfy all the meetings. Both of these two we need to sort by the starting time, because it's natural we always check how the current earliest meeting can be attened or satisfied. For LC 2402 Meeting rooms III, because of prioritizing empty rooms with lowest id, we need to maintain two min heaps: empty_room and current used min heap, and always when processing one meeting, check the current used min heap and pop all the released rooms to empty rooms. 
+
+## 
