@@ -58,7 +58,7 @@
 
 [1905 Count Sub Islands](https://leetcode.com/problems/count-sub-islands/description/)
 
-[LC 1971 Find if Path Exists in Graph](https://leetcode.com/problems/find-if-path-exists-in-graph/)
+[1971 Find if Path Exists in Graph](https://leetcode.com/problems/find-if-path-exists-in-graph/)
 
 [2340 Minimus Adjacent Swaps to Make a Valid Array](https://leetcode.com/problems/minimum-adjacent-swaps-to-make-a-valid-array/description/)
 
