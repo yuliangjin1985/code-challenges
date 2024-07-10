@@ -46,6 +46,8 @@
 
 [772 Basic Calculator III](https://leetcode.com/problems/basic-calculator-iii/description/)
 
+[787 Cheapest Flights within K Stops](https://leetcode.com/problems/cheapest-flights-within-k-stops/description/)
+
 [870 Advantage Shuffle](https://leetcode.com/problems/advantage-shuffle/description/)
 
 [1057 Campus Bikes](https://leetcode.com/problems/campus-bikes/description/)
@@ -92,6 +94,33 @@ def isValidSudoku(self, board):
     ]
     return len(tuples) == len(set(tuples))
 
+```
+
+## 15 3Sum
+
+There is a requirement that the result must not contain duplicate triplets, so need to skip any possible duplicates. For the first element, we have to skip the duplicate this way: `if i > 0 and A[i] == A[i-1]: continue`, for the second and the third: `while l < r and A[l] == A[l+1]: l += 1` and `while l < r and A[r] == A[r-1]: r -= 1`.
+
+```python
+    def threeSum(self, A: List[int]) -> List[List[int]]:
+        A.sort()
+        n = len(A)
+        out = []
+        for i in range(n-2):
+            if i > 0 and A[i] == A[i-1]: continue
+            l, r = i +1, n-1
+            while l < r:
+                if A[i] + A[l] + A[r] == 0:
+                    out.append([A[i], A[l], A[r]])
+                    while l < r and A[l] == A[l+1]: l += 1
+                    while l < r and A[r] == A[r-1]: r -= 1
+                    l += 1
+                    r -= 1
+                elif A[i] + A[l] + A[r] < 0:
+                    l += 1
+                else:
+                    r -= 1
+        
+        return out
 ```
 
 ## 206 Reverse Linked List
